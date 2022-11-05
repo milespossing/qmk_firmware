@@ -1,0 +1,4 @@
+Keyboard notes
+
+  - Might want to think about getting rid of top right '-' as we have that same key on the raise layer
+  - Could look into having a mouse layer and tapdance to get in/out of the layer
