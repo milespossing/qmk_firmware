@@ -28,30 +28,38 @@ enum custom_keycodes {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_QWERTY] = LAYOUT_moonlander_basic(
+    [_QWERTY] = LAYOUT_moonlander_home(
           KC_TAB, __QWERTY_L1__, __QWERTY_R1__, XXXXXXX,
   LCTL_T(KC_ESC), __QWERTY_L2__, __QWERTY_R2__, KC_QUOT,
          KC_LSPO, __QWERTY_L3__, __QWERTY_R3__, KC_RSPC
     ),
 
-    [_LOWER] = LAYOUT_moonlander_basic(
+    [_LOWER] = LAYOUT_moonlander_common(
         __LOWER_L1__, __LOWER_R1__, \
         __LOWER_L2__, __LOWER_R2__, \
         __LOWER_L3__, __LOWER_R3__  \
     ),
 
-    [_RAISE] = LAYOUT_moonlander_basic(
+    [_RAISE] = LAYOUT_moonlander_common(
         __RAISE_L1__, __RAISE_R1__, \
         __RAISE_L2__, __RAISE_R2__, \
         __RAISE_L3__, __RAISE_R3__  \
     ),
+    [_ADJUST] = LAYOUT_moonlander_common(
+        __RGB_CTRL__,__EMPTY__,\
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(_GAME),   __EMPTY__,\
+        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT \
+    ),
+    [_GAME] = LAYOUT_moonlander_basic(
+                                            __NUM_ROW_LEFT__, XXXXXXX,             XXXXXXX,  __NUM_ROW_RGHT__, // 14
+        KC_TAB,                                __QWERTY_L1__, XXXXXXX,             XXXXXXX,     __QWERTY_R1__,                            XXXXXXX, //14
+        KC_ESC,                                __QWERTY_L2__, XXXXXXX,             XXXXXXX,     __QWERTY_R2__,                            KC_QUOT, //14
+        KC_LSFT,                               __QWERTY_L3__,                                   __QWERTY_R3__,                            XXXXXXX, //12 // makes 36
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           KC_ENT,         TO(_QWERTY),           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, //12 // makes 48
+                                             KC_SPC, XXXXXXX, XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX                                       //6  // makes 54
+    ),
 
-    [_MEDIA] = LAYOUT_moonlander_common(
-        __EMPTY__, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, \
-        __MEDIA_L1__, __MEDIA_R1__, \
-        __MEDIA_L2__, __MEDIA_R2__, \
-        __MEDIA_R3__, __MEDIA_R3__ \
-    )
+    [_MEDIA] = LAYOUT_moonlander_common(__MEDIA_ALL__)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {

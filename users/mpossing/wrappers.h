@@ -12,41 +12,48 @@
 #define __QWERTY_R2__   KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
 #define __QWERTY_R3__   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
+#define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+
+#define __NUM_ROW_LEFT__  KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
+#define __NUM_ROW_RGHT__ KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX
+#define __SYM_ROW_LEFT__  (KC_GRV), KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC
+#define __SYM_ROW_RGHT__ KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX
+#define __SYM_ROW_LRGT__ XXXXXXX, KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS
+#define __SYM_ROW_LLFT__ XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE
+
+// Raise
+#define __RAISE_L1__  __NUM_ROW_LEFT__
+#define __RAISE_L2__  __SYM_ROW_LEFT__
+#define __RAISE_L3__  KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+
+#define __RAISE_R1__  __NUM_ROW_RGHT__
+#define __RAISE_R2__  __SYM_ROW_RGHT__
+#define __RAISE_R3__  __SYM_ROW_LRGT__
+
+// Lower
+#define __LOWER_L1__  __SYM_ROW_LEFT__
+#define __LOWER_L2__  __EMPTY__
+#define __LOWER_L3__  __RAISE_L3__
+
+#define __LOWER_R1__  __SYM_ROW_RGHT__
+#define __LOWER_R2__  __EMPTY__
+#define __LOWER_R3__  __SYM_ROW_LLFT__
+
+#define __RGB_CTRL__  RGB_TOG, RGB_MODE_FORWARD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_VAI
+
 // MEDIA
 #define __MEDIA_L1__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define __MEDIA_L2__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define __MEDIA_L3__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
-#define __MEDIA_R1__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define __MEDIA_R1__   KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX
 #define __MEDIA_R2__   KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, KC_MPLY // leave second right blank
-#define __MEDIA_R3__   XXXXXXX, XXXXXXX, KC_MPRV, KC_MNXT, XXXXXXX, XXXXXXX
+#define __MEDIA_R3__   KC_VOLD, KC_VOLU, KC_MPRV, KC_MNXT, XXXXXXX, XXXXXXX
 
 #define __MEDIA_ALL__       __MEDIA_L1__, __MEDIA_R1__, \
                             __MEDIA_L2__, __MEDIA_R2__, \
                             __MEDIA_L3__, __MEDIA_R3__
 
-// Raise
-#define __RAISE_L1__    KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5
-#define __RAISE_L2__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __RAISE_L3__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-
-#define __RAISE_R1__      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, XXXXXXX
-#define __RAISE_R2__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __RAISE_R3__   XXXXXXX, KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS
-
-// Lower
-#define __LOWER_L1__ S(KC_GRV), KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC
-#define __LOWER_L2__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __LOWER_L3__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-
-#define __LOWER_R1__   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX
-#define __LOWER_R2__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __LOWER_R3__   XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE
-
-#define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-
-#define __FN_LEFT__  KC_F1, KC_F2, KC_F3,  KC_F4,  KC_F5, KC_F6
-#define __FN_RIGHT__ KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12
 
 #if defined(KEYBOARD_moonlander)
   #include "moonlander.h"
@@ -62,45 +69,43 @@
  */
 #   define WRAPPER_moonlander(...)    LAYOUT_moonlander(__VA_ARGS__)
 #   define WRAPPER_moonlander_common( \
-    T01, T02, T03, T04, T05, T06,   T07, T08, T09, T10, T11, T12, \
     L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16, \
     L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
     L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36  \
 ) WRAPPER_moonlander( \
-            T01,     T02,     T03,     T04,     T05,     T06, XXXXXXX,           XXXXXXX,     T07,     T08,     T09,     T10,             T11,     T12,      \
-            L11,     L12,     L13,     L14,     L15,     L16, XXXXXXX,           XXXXXXX,     R11,     R12,     R13,     R14,             R15,     R16,      \
-            L21,     L22,     L23,     L24,     L25,     L26, XXXXXXX,           XXXXXXX,     R21,     R22,     R23,     R24, LT(_MEDIA, R25),     R26,      \
-            L31,     L32,     L33,     L34,     L35,     L36,                                 R31,     R32,     R33,     R34,             R35,     R36,      \
-        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           ALFRED,      XXXXXXX,               XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, \
-                                          KC_SPC, MO(_LOWER), XXXXXXX,      XXXXXXX, LT(_RAISE, KC_BSPC), KC_ENT                            )
-#   define WRAPPER_moonlander_basic(\
+          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,  KC_F13,            KC_F16,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,      \
+            L11,     L12,     L13,     L14,     L15,     L16,  KC_F14,            KC_F17,     R11,     R12,     R13,     R14,     R15,     R16,      \
+            L21,     L22,     L23,     L24,     L25,     L26,  KC_F15,            KC_F18,     R21,     R22,     R23,     R24,     R25,     R26,      \
+            L31,     L32,     L33,     L34,     L35,     L36,                                 R31,     R32,     R33,     R34,     R35,     R36,      \
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           ALFRED,      XXXXXXX,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
+                                          KC_SPC, MO(_LOWER),  KC_F20,       KC_F21, LT(_RAISE, KC_BSPC), KC_ENT                            )
+#   define WRAPPER_moonlander_gamepad( \
+    T01, T02, T03, T04, T05, T06, T07,    \
+    L11, L12, L13, L14, L15, L16, L17,   \
+    L21, L22, L23, L24, L25, L26, L27,   \
+    L31, L32, L33, L34, L35, L36,    \
+    L41, L42, L43, L44, L45,      Red, P1, P2, P3 \
+) WRAPPER_moonlander( \
+        T01, T02, T03, T04, T05, T06, T07,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
+        L11, L12, L13, L14, L15, L16, L17,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
+        L21, L22, L23, L24, L25, L26, L27,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
+        L31, L32, L33, L34, L35, L36,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
+        L41, L42, L43, L44, L45,             Red,      XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+                                      P1, P2, P3,      XXXXXXX, LT(_RAISE, KC_BSPC), TG(_QWERTY)                            )
+#   define WRAPPER_moonlander_home(\
     L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16, \
     L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
     L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36  \
     ) WRAPPER_moonlander_common( \
-          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,         KC_F7,   KC_F8,   KC_F9,  KC_F10,          KC_F11,  KC_F12,                                                  \
             L11,     L12,     L13,     L14,     L15,     L16,           R11,     R12,     R13,     R14,             R15,     R16,      \
             L21,     L22,     L23,     L24,     L25,     L26,           R21,     R22,     R23,     R24, LT(_MEDIA, R25),     R26,      \
             L31,     L32,     L33,     L34,     L35,     L36,           R31,     R32,     R33,     R34,             R35,     R36      \
     )
-/* #   define WRAPPER_moonlander_gamepad( \
-//         k00, k01, k02, k03, k04, k05, k06, \
-//         k10, k11, k12, k13, k14, k15, k16, \
-//         k20, k21, k22, k23, k24, k25, k26, \
-//         k30, k31, k32, k33, k34, k35,      \
-//         k40, k41, k42, k43, k44,      k53, \
-//                             k50, k51, k52  \
-//     ) WRAPPER_moonlander( \
-//         k00, k01, k02, k03, k04, k05, k06,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-//         k10, k11, k12, k13, k14, k15, k16,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-//         k20, k21, k22, k23, k24, k25, k26,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-//         k30, k31, k32, k33, k34, k35,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-//         k40, k41, k42, k43, k44,      k53,   XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-//                             k50, k51, k52,   XXXXXXX, XXXXXXX, TO(_QWERTY) \
-//     ) */
 
-#   define LAYOUT_moonlander_basic(...)  WRAPPER_moonlander_basic(__VA_ARGS__)
+#   define LAYOUT_moonlander_basic(...)   WRAPPER_moonlander(__VA_ARGS__)
+#   define LAYOUT_moonlander_home(...)    WRAPPER_moonlander_home(__VA_ARGS__)
 #   define LAYOUT_moonlander_common(...)  WRAPPER_moonlander_common(__VA_ARGS__)
+#   define LAYOUT_moonlander_game(...)    WRAPPER_moonlander_game(__VA_ARGS__)
 // #   define LAYOUT_moonlander_mods(...)    WRAPPER_moonlander_mods(__VA_ARGS__)
 // #   define LAYOUT_moonlander_gamepad(...) WRAPPER_moonlander_gamepad(__VA_ARGS__)
 #elif defined(KEYBOARD_lily58)

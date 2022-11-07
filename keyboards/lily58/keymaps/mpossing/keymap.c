@@ -126,14 +126,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
     // set_timelog();
   }
-  switch (keycode) {
-      case SHRUG:
-        if (record->event.pressed) {
-            send_unicode_string("¯\\_(ツ)_/¯");
-        }
-        return false;
-        break;
-  }
   return true;
 }
 
