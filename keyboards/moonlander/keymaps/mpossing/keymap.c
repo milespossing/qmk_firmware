@@ -30,25 +30,26 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_moonlander_home(
           KC_TAB, __QWERTY_L1__, __QWERTY_R1__, XXXXXXX,
-  LCTL_T(KC_ESC), __QWERTY_L2__, __QWERTY_R2__, KC_QUOT,
+         KC_CESC, __QWERTY_L2__, __QWERTY_R2__, KC_QUOT,
          KC_LSPO, __QWERTY_L3__, __QWERTY_R3__, KC_RSPC
     ),
-
-    [_LOWER] = LAYOUT_moonlander_common(
-        __LOWER_L1__, __LOWER_R1__, \
-        __LOWER_L2__, __LOWER_R2__, \
-        __LOWER_L3__, __LOWER_R3__  \
-    ),
-
     [_RAISE] = LAYOUT_moonlander_common(
         __RAISE_L1__, __RAISE_R1__, \
         __RAISE_L2__, __RAISE_R2__, \
         __RAISE_L3__, __RAISE_R3__  \
     ),
+    [_LOWER] = LAYOUT_moonlander_basic(
+                                                    __EMPTY__, XXXXXXX,            XXXXXXX,                                          __EMPTY__, // 14
+         KC_TAB,                                __QWERTY_L1__, XXXXXXX,            XXXXXXX,   XXXXXXX,   KC_P7,   KC_P8,   KC_P9, XXXXXXX, XXXXXXX, //14
+        KC_CESC,                                __QWERTY_L2__, XXXXXXX,            XXXXXXX,   XXXXXXX,   KC_P4,   KC_P5,   KC_P6, XXXXXXX, XXXXXXX, //14
+        KC_LSFT,                                __QWERTY_L3__,                                XXXXXXX,   KC_P1,   KC_P2,   KC_P3, XXXXXXX, XXXXXXX, //12 // makes 36
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,            KC_ENT,            XXXXXXX,              KC_P0,   KC_P0, XXXXXXX, XXXXXXX, XXXXXXX, //12 // makes 48
+                                              KC_SPC, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX,  KC_ENT                                        //06  // makes 54
+    ),
     [_ADJUST] = LAYOUT_moonlander_common(
-        __RGB_CTRL__,__EMPTY__,\
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(_GAME),   __EMPTY__,\
-        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT \
+        ______________________RGB_CTRL______________________,  _______________________EMPTY________________________,\
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG_GAME,  XXXXXXX, AG_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT \
     ),
     [_GAME] = LAYOUT_moonlander_basic(
                                             __NUM_ROW_LEFT__, XXXXXXX,             XXXXXXX,  __NUM_ROW_RGHT__, // 14
