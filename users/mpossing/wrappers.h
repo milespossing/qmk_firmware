@@ -16,6 +16,12 @@
 #define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define _______________________EMPTY________________________ __EMPTY__
 #define KC_CESC LCTL_T(KC_ESC)
+#define ______________________RGB_CTRL______________________  RGB_TOG, RGB_MODE_FORWARD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_VAI
+#define TG_GAME TG(_GAME)
+#define MO_RAZE MO(_RAISE)
+#define TG_HOME TG(_QWERTY)
+#define KC_BRSE LT(_RAISE, KC_BSPC)
+#define KC_BLWR LT(_RAISE, KC_BSPC)
 
 #define __NUM_ROW_LEFT__  KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
 #define __NUM_ROW_RGHT__ KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX
@@ -42,10 +48,6 @@
 #define __LOWER_R2__  __EMPTY__
 #define __LOWER_R3__  __SYM_ROW_LLFT__
 
-#define ______________________RGB_CTRL______________________  RGB_TOG, RGB_MODE_FORWARD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_VAI
-#define TG_GAME TG(_GAME)
-#define MO_RAZE MO(_RAISE)
-#define TG_HOME TG(_QWERTY)
 
 // MEDIA
 #define __MEDIA_L1__   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
@@ -74,30 +76,30 @@
     ) \
  */
 #   define WRAPPER_moonlander(...)    LAYOUT_moonlander(__VA_ARGS__)
-#   define WRAPPER_moonlander_common( \
-    L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16, \
-    L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
-    L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36  \
-) WRAPPER_moonlander( \
-          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,  KC_F13,            KC_F16,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,      \
-            L11,     L12,     L13,     L14,     L15,     L16, DM_REC1,            KC_F17,     R11,     R12,     R13,     R14,     R15,     R16,      \
-            L21,     L22,     L23,     L24,     L25,     L26, DM_RSTP,           DM_PLY1,     R21,     R22,     R23,     R24,     R25,     R26,      \
-            L31,     L32,     L33,     L34,     L35,     L36,                                 R31,     R32,     R33,     R34,     R35,     R36,      \
-        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           ALFRED,  OSL(_RAISE),               KC_BSPC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
-                                          KC_SPC, MO(_LOWER),  XXXXXXX,      XXXXXXX, MO_RAZE, KC_ENT                            )
-#   define WRAPPER_moonlander_gamepad( \
-    T01, T02, T03, T04, T05, T06, T07,    \
-    L11, L12, L13, L14, L15, L16, L17,   \
-    L21, L22, L23, L24, L25, L26, L27,   \
-    L31, L32, L33, L34, L35, L36,    \
-    L41, L42, L43, L44, L45,      Red, P1, P2, P3 \
-) WRAPPER_moonlander( \
-        T01, T02, T03, T04, T05, T06, T07,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
-        L11, L12, L13, L14, L15, L16, L17,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
-        L21, L22, L23, L24, L25, L26, L27,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
-        L31, L32, L33, L34, L35, L36,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      \
-        L41, L42, L43, L44, L45,             Red,      XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-                                      P1, P2, P3,      XXXXXXX, LT(_RAISE, KC_BSPC), TG(_QWERTY)                            )
+#   define WRAPPER_moonlander_common(                                                                                                           \
+    L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16,                                                                               \
+    L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26,                                                                               \
+    L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36                                                                                \
+) WRAPPER_moonlander(                                                                                                                           \
+          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,  KC_F13,            KC_F16,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12, \
+            L11,     L12,     L13,     L14,     L15,     L16, DM_REC1,            KC_F17,     R11,     R12,     R13,     R14,     R15,     R16, \
+            L21,     L22,     L23,     L24,     L25,     L26, DM_RSTP,           DM_PLY1,     R21,     R22,     R23,     R24,     R25,     R26, \
+            L31,     L32,     L33,     L34,     L35,     L36,                                 R31,     R32,     R33,     R34,     R35,     R36, \
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           ALFRED,       OSL(_RAISE),          KC_BSPC, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL, \
+                                             KC_SPC, KC_BLWR, XXXXXXX,           KC_BSPC, KC_BRSE,  KC_ENT                                      )
+#   define WRAPPER_moonlander_gamepad(                                                                                  \
+    T01, T02, T03, T04, T05, T06, T07,                                                                                  \
+    L11, L12, L13, L14, L15, L16, L17,                                                                                  \
+    L21, L22, L23, L24, L25, L26, L27,                                                                                  \
+    L31, L32, L33, L34, L35, L36,                                                                                       \
+    L41, L42, L43, L44, L45,      Red, P1, P2, P3                                                                       \
+) WRAPPER_moonlander(                                                                                                   \
+        T01, T02, T03, T04, T05, T06, T07,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+        L11, L12, L13, L14, L15, L16, L17,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+        L21, L22, L23, L24, L25, L26, L27,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+        L31, L32, L33, L34, L35, L36,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+        L41, L42, L43, L44, L45,             Red,        XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+                                      P1, P2, P3,        XXXXXXX, KC_BRSE, TG(_QWERTY)                                  )
 #   define WRAPPER_moonlander_home(\
     L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16, \
     L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
