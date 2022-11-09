@@ -34,10 +34,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   __RAISE_L2__, __RAISE_R2__, \
   __RAISE_L3__, __RAISE_R3__  \
 ),
-[_ADJUST] = LAYOUT_lily_common(
-  __EMPTY__, __EMPTY__, \
-  __EMPTY__, __EMPTY__, \
-  __EMPTY__, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT
+[_ADJUST] = LAYOUT_lily(
+  XXXXXXX, XXXXXXX, XXXXXXX, DM_REC1, DM_RSTP, DM_PLY1,                   _______________________EMPTY________________________,
+  _______________________EMPTY________________________,                   _______________________EMPTY________________________,
+  _______________________EMPTY________________________, XXXXXXX, XXXXXXX, _______________________EMPTY________________________,
+  _______________________EMPTY________________________,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                             XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX
 ),
 [_MEDIA] = LAYOUT_lily_common(__MEDIA_ALL__)
 };
