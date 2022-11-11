@@ -12,6 +12,7 @@
 #define __QWERTY_R2__   KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
 #define __QWERTY_R3__   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
+
 // Utils
 #define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define _______________________EMPTY________________________ __EMPTY__
@@ -23,6 +24,14 @@
 #define KC_BRSE LT(_RAISE, KC_BSPC)
 #define KC_BLWR LT(_LOWER, KC_BSPC)
 #define MO_LOWR MO(_LOWER)
+
+#define __QWERTY_WL1__ KC_TAB, __QWERTY_L1__
+#define __QWERTY_WL2__ KC_CESC, __QWERTY_L2__
+#define __QWERTY_WL3__ KC_LSPO, __QWERTY_L3__
+
+#define __QWERTY_WR1__ __QWERTY_R1__, XXXXXXX
+#define __QWERTY_WR2__ __QWERTY_R2__, KC_QUOT
+#define __QWERTY_WR3__ __QWERTY_R3__, KC_RSPC
 
 #define __NUM_ROW_LEFT__  KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
 #define __NUM_ROW_RGHT__ KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX
@@ -63,6 +72,8 @@
                             __MEDIA_L2__, __MEDIA_R2__, \
                             __MEDIA_L3__, __MEDIA_R3__
 
+#define LAY_MED(k) LT(_MEDIA, k)
+
 
 #if defined(KEYBOARD_moonlander)
   #include "moonlander.h"
@@ -89,15 +100,15 @@
     L21, L22, L23, L24, L25, L26, CL3,   CR3, R21, R22, R23, R24, R25, R26,                                                                               \
     L31, L32, L33, L34, L35, L36,             R31, R32, R33, R34, R35, R36,                                                                               \
     L41, L42, L43, L44, L45,      RDL,   RDR,      R42, R43, R44, R45, R46,                                                                               \
-      KC_SPC, MO_LOWR, TG(_LOWER),           KC_BSPC, KC_BRSE,  KC_ENT                                      )
+      KC_SPC, MO_LOWR, TG(_LOWER),           KC_BSPC, MO_RAZE,  KC_ENT                                      )
 #   define WRAPPER_moonlander_common(                                                                                                           \
     L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16,                                                                               \
     L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26,                                                                               \
     L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36                                                                                \
 ) WRAPPER_moonlander_top(                                                                                                                           \
           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,  KC_F13,            KC_F16,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12, \
-            L11,     L12,     L13,     L14,     L15,     L16, DM_REC1,            KC_F17,     R11,     R12,     R13,     R14,     R15,     R16, \
-            L21,     L22,     L23,     L24,     L25,     L26, DM_RSTP,           DM_PLY1,     R21,     R22,     R23,     R24,     R25,     R26, \
+            L11,     L12,     L13,     L14,     L15,     L16, DM_REC1,           DM_PLY1,     R11,     R12,     R13,     R14,     R15,     R16, \
+            L21,     L22,     L23,     L24,     L25,     L26, DM_RSTP,           KC_BSPC,     R21,     R22,     R23,     R24,     R25,     R26, \
             L31,     L32,     L33,     L34,     L35,     L36,                                 R31,     R32,     R33,     R34,     R35,     R36, \
         KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           ALFRED,           VIM_SAV,          KC_BSPC, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL  )
 #   define WRAPPER_moonlander_gamepad(                                                                                  \
@@ -147,11 +158,20 @@ Layout Empty
     L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
     L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36 \
 ) WRAPPER_lily58( \
-      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                  KC_F7,   KC_F8,   KC_F9,  KC_F10,          KC_F11,  KC_F11, \
-        L11,     L12,     L13,     L14,     L15,     L16,                    R11,     R12,     R13,     R14,             R15,     R16, \
-        L21,     L22,     L23,     L24,     L25,     L26,                    R21,     R22,     R23,     R24, LT(_MEDIA, R25),     R26, \
-        L31,     L32,     L33,     L34,     L35,     L36, ALFRED,  VIM_SAV,  R31,     R32,     R33,     R34,             R35,     R36, \
-                          KC_LALT, KC_LGUI, MO(_LOWER), KC_SPC,        KC_ENT, MO(_RAISE), KC_BSPC,  KC_DEL                            \
+      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                  KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F11, \
+        L11,     L12,     L13,     L14,     L15,     L16,                    R11,     R12,     R13,     R14,     R15,     R16, \
+        L21,     L22,     L23,     L24,     L25,     L26,                    R21,     R22,     R23,     R24,     R25,     R26, \
+        L31,     L32,     L33,     L34,     L35,     L36, ALFRED,  VIM_SAV,  R31,     R32,     R33,     R34,     R35,     R36, \
+                          KC_LALT, KC_LGUI, MO(_LOWER), KC_SPC,        KC_ENT, MO(_RAISE), KC_BSPC,  KC_DEL                    \
+)
+#   define WRAPPER_lily58_home(\
+    L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16, \
+    L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
+    L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36 \
+) WRAPPER_lily58_common(\
+    L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14,          R15, R16, \
+    L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, LAY_MED(R25), R26, \
+    L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34,          R35, R36 \
 )
 #   define LAYOUT_lily(...)        WRAPPER_lily58(__VA_ARGS__)
 #   define LAYOUT_lily_common(...) WRAPPER_lily58_common(__VA_ARGS__)

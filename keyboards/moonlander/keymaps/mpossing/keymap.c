@@ -22,16 +22,12 @@
 #include "version.h"
 #include "mpossing.h"
 
-enum custom_keycodes {
-    VRSN = ML_SAFE_RANGE,
-};
-
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_moonlander_home(
-          KC_TAB, __QWERTY_L1__, __QWERTY_R1__, XXXXXXX,
-         KC_CESC, __QWERTY_L2__, __QWERTY_R2__, KC_QUOT,
-         KC_LSPO, __QWERTY_L3__, __QWERTY_R3__, KC_RSPC
+         __QWERTY_WL1__, __QWERTY_WR1__,
+         __QWERTY_WL2__, __QWERTY_WR2__,
+         __QWERTY_WL3__, __QWERTY_WR3__
     ),
     [_RAISE] = LAYOUT_moonlander_common(
         __RAISE_L1__, __RAISE_R1__, \

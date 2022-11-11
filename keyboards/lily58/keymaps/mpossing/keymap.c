@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_lily_common(
           KC_TAB, __QWERTY_L1__, XXXXXXX,   KC_P7,   KC_P8,   KC_P9, XXXXXXX, XXXXXXX, \
   LCTL_T(KC_ESC), __QWERTY_L2__, XXXXXXX,   KC_P4,   KC_P6,   KC_P7, XXXXXXX, XXXXXXX, \
-         KC_LSPO, __QWERTY_L3__,   KC_P0,   KC_P1,   KC_P2,   KC_P3, XXXXXXX, XXXXXXX  \
+         KC_LSFT, __QWERTY_L3__,   KC_P0,   KC_P1,   KC_P2,   KC_P3, XXXXXXX, XXXXXXX  \
 ),
 [_RAISE] = LAYOUT_lily_common(
   __RAISE_L1__, __RAISE_R1__, \
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ADJUST] = LAYOUT_lily(
   XXXXXXX, XXXXXXX, XXXXXXX, DM_REC1, DM_RSTP, DM_PLY1,                   _______________________EMPTY________________________,
   _______________________EMPTY________________________,                   _______________________EMPTY________________________,
-  _______________________EMPTY________________________, XXXXXXX, XXXXXXX, _______________________EMPTY________________________,
+  _______________________EMPTY________________________, XXXXXXX, XXXXXXX, XXXXXXX, AG_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   _______________________EMPTY________________________,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                              XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX
 ),
