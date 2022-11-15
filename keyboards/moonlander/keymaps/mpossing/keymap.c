@@ -35,11 +35,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __RAISE_L3__, __RAISE_R3__  \
     ),
     [_LOWER] = LAYOUT_moonlander_top(
-                                                      __EMPTY__, XXXXXXX,            XXXXXXX,                                          __EMPTY__, // 14
-         KC_TAB,                                  __QWERTY_L1__, XXXXXXX,            XXXXXXX, XXXXXXX,   KC_P7,   KC_P8,   KC_P9, XXXXXXX, XXXXXXX, //14
-        KC_CESC,                                  __QWERTY_L2__, XXXXXXX,            XXXXXXX, XXXXXXX,   KC_P4,   KC_P5,   KC_P6, XXXXXXX, XXXXXXX, //14
-        KC_LSFT,                                  __QWERTY_L3__,                              XXXXXXX,   KC_P1,   KC_P2,   KC_P3, XXXXXXX, XXXXXXX, //12 // makes 36
-        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,              KC_ENT,            XXXXXXX,            KC_P0,   KC_P0, XXXXXXX, XXXXXXX, XXXXXXX  //12 // makes 48
+        _______________________EMPTY________________________, XXXXXXX,            XXXXXXX, _______________________EMPTY________________________, // 14
+         KC_TAB, _________________QWERTY_L1_________________, XXXXXXX,            XXXXXXX, XXXXXXX,   KC_P7,   KC_P8,   KC_P9, XXXXXXX, XXXXXXX, //14
+        KC_CESC, _________________QWERTY_L2_________________, XXXXXXX,            XXXXXXX, XXXXXXX,   KC_P4,   KC_P5,   KC_P6, XXXXXXX, XXXXXXX, //14
+        KC_LSFT, _________________QWERTY_L3_________________,                              XXXXXXX,   KC_P1,   KC_P2,   KC_P3, XXXXXXX, XXXXXXX, //12 // makes 36
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           KC_ENT,            XXXXXXX,            KC_P0,   KC_P0, XXXXXXX, XXXXXXX, XXXXXXX  //12 // makes 48
     ),
     [_ADJUST] = LAYOUT_moonlander_common(
         ______________________RGB_CTRL______________________,  _______________________EMPTY________________________,\
@@ -47,12 +47,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT \
     ),
     [_GAME] = LAYOUT_moonlander_basic(
-                                            __NUM_ROW_LEFT__, XXXXXXX,             XXXXXXX,  __NUM_ROW_RGHT__, // 14
-        KC_TAB,                                __QWERTY_L1__, XXXXXXX,             XXXXXXX,     __QWERTY_R1__,                            XXXXXXX, //14
-        KC_ESC,                                __QWERTY_L2__, XXXXXXX,             XXXXXXX,     __QWERTY_R2__,                            KC_QUOT, //14
-        KC_LSFT,                               __QWERTY_L3__,                                   __QWERTY_R3__,                            XXXXXXX, //12 // makes 36
-        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           KC_ENT,         TO(_QWERTY),           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, //12 // makes 48
-                                             KC_SPC, XXXXXXX, XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX                                       //6  // makes 54
+                                            __NUM_ROW_LEFT__, XXXXXXX,             XXXXXXX, __NUM_ROW_RGHT__,
+        KC_TAB,                                __QWERTY_L1__, XXXXXXX,             XXXXXXX,    __QWERTY_R1__,                            KC_BSPC,
+        KC_ESC,                                __QWERTY_L2__, XXXXXXX,             XXXXXXX,    __QWERTY_R2__,                            KC_QUOT,
+        KC_LSFT,                               __QWERTY_L3__,                                  __QWERTY_R3__,                            XXXXXXX,
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           KC_ENT,         TO(_QWERTY),          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                             KC_SPC, XXXXXXX, XXXXXXX,             XXXXXXX, MO_RAZE, XXXXXXX
     ),
 
     [_MEDIA] = LAYOUT_moonlander_common(__MEDIA_ALL__)

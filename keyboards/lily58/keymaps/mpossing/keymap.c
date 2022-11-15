@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                    `----------------------------'           '------''--------------------'
  */
 
- [_QWERTY] = LAYOUT_lily_common(
+ [_QWERTY] = LAYOUT_lily_home(
           KC_TAB, __QWERTY_L1__, __QWERTY_R1__, XXXXXXX,
   LCTL_T(KC_ESC), __QWERTY_L2__, __QWERTY_R2__, KC_QUOT,
          KC_LSPO, __QWERTY_L3__, __QWERTY_R3__, KC_RSPC

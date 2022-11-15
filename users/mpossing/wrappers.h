@@ -5,19 +5,26 @@
 
 // QWERTY
 #define __QWERTY_L1__   KC_Q, KC_W, KC_E, KC_R, KC_T
+//                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define                 _________________QWERTY_L1_________________ __QWERTY_L1__
 #define __QWERTY_L2__   KC_A, KC_S, KC_D, KC_F, KC_G
+#define                 _________________QWERTY_L2_________________ __QWERTY_L2__
 #define __QWERTY_L3__   KC_Z, KC_X, KC_C, KC_V, KC_B
+#define                 _________________QWERTY_L3_________________ __QWERTY_L3__
 
 #define __QWERTY_R1__   KC_Y, KC_U, KC_I,    KC_O,   KC_P
+#define                 _________________QWERTY_R1_________________ __QWERTY_R1__
 #define __QWERTY_R2__   KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
+#define                 _________________QWERTY_R2_________________ __QWERTY_R2__
 #define __QWERTY_R3__   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
+#define                 _________________QWERTY_R3_________________ __QWERTY_R3__
 
 
 // Utils
 #define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define _______________________EMPTY________________________ __EMPTY__
+#define           _______________________EMPTY________________________ __EMPTY__
 #define KC_CESC LCTL_T(KC_ESC)
-#define ______________________RGB_CTRL______________________  RGB_TOG, RGB_MODE_FORWARD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_VAI
+#define           ______________________RGB_CTRL______________________  RGB_TOG, RGB_MODE_FORWARD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_VAI
 #define TG_GAME TG(_GAME)
 #define MO_RAZE MO(_RAISE)
 #define TG_HOME TG(_QWERTY)
@@ -175,4 +182,5 @@ Layout Empty
 )
 #   define LAYOUT_lily(...)        WRAPPER_lily58(__VA_ARGS__)
 #   define LAYOUT_lily_common(...) WRAPPER_lily58_common(__VA_ARGS__)
+#   define LAYOUT_lily_home(...) WRAPPER_lily58_home(__VA_ARGS__)
 #endif
