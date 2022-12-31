@@ -29,6 +29,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          __QWERTY_WL2__, __QWERTY_WR2__,
          __QWERTY_WL3__, __QWERTY_WR3__
     ),
+    [_COLEMAK] = LAYOUT_moonlander_home(
+         __COLEMAK_WL1__, __COLEMAK_WR1__,
+         __COLEMAK_WL2__, __COLEMAK_WR2__,
+         __COLEMAK_WL3__, __COLEMAK_WR3__
+    ),
     [_RAISE] = LAYOUT_moonlander_common(
         __RAISE_L1__, __RAISE_R1__, \
         __RAISE_L2__, __RAISE_R2__, \
@@ -44,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT_moonlander_common(
         ______________________RGB_CTRL______________________,  _______________________EMPTY________________________,\
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG_GAME,  XXXXXXX, AG_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
-        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT \
+        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, DF_COLE, DF_QWER, XXXXXXX, XXXXXXX, QK_BOOT \
     ),
     [_GAME] = LAYOUT_moonlander_basic(
                                             __NUM_ROW_LEFT__, XXXXXXX,             XXXXXXX, __NUM_ROW_RGHT__,

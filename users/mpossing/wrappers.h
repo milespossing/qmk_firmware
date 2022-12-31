@@ -20,6 +20,17 @@
 #define                 _________________QWERTY_R3_________________ __QWERTY_R3__
 
 
+#define __COLEMAK_L1__ KC_Q, KC_W, KC_F, KC_P, KC_G
+#define __COLEMAK_L2__ KC_A, KC_R, KC_S, KC_T, KC_D
+#define __COLEMAK_L3__ __QWERTY_L3__
+
+#define __COLEMAK_R1__ KC_J, KC_L, KC_U, KC_Y, KC_SCLN
+#define __COLEMAK_R2__ KC_H, KC_N, KC_E, KC_I, KC_O
+#define __COLEMAK_R3__ KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH
+
+#define DF_QWER DF(_QWERTY)
+#define DF_COLE DF(_COLEMAK)
+
 // Utils
 #define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define           _______________________EMPTY________________________ __EMPTY__
@@ -39,6 +50,14 @@
 #define __QWERTY_WR1__ __QWERTY_R1__, XXXXXXX
 #define __QWERTY_WR2__ __QWERTY_R2__, KC_QUOT
 #define __QWERTY_WR3__ __QWERTY_R3__, KC_RSPC
+
+#define __COLEMAK_WL1__ KC_TAB, __COLEMAK_L1__
+#define __COLEMAK_WL2__ KC_CESC, __COLEMAK_L2__
+#define __COLEMAK_WL3__ KC_LSPO, __COLEMAK_L3__
+
+#define __COLEMAK_WR1__ __COLEMAK_R1__, XXXXXXX
+#define __COLEMAK_WR2__ __COLEMAK_R2__, KC_QUOT
+#define __COLEMAK_WR3__ __COLEMAK_R3__, KC_RSPC
 
 #define __NUM_ROW_LEFT__  KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
 #define __NUM_ROW_RGHT__ KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX
@@ -131,15 +150,17 @@
         L31, L32, L33, L34, L35, L36,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
         L41, L42, L43, L44, L45,             Red,        XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                       P1, P2, P3,        XXXXXXX, KC_BRSE, TG(_QWERTY)                                  )
+#define KC_MEDB LT(_MEDIA, KC_BSPC)
 #   define WRAPPER_moonlander_home(\
     L11, L12, L13, L14, L15, L16,   R11, R12, R13, R14, R15, R16, \
     L21, L22, L23, L24, L25, L26,   R21, R22, R23, R24, R25, R26, \
     L31, L32, L33, L34, L35, L36,   R31, R32, R33, R34, R35, R36  \
-    ) WRAPPER_moonlander_common( \
-            L11,     L12,     L13,     L14,     L15,     L16,           R11,     R12,     R13,     R14,             R15,     R16,      \
-            L21,     L22,     L23,     L24,     L25,     L26,           R21,     R22,     R23,     R24, LT(_MEDIA, R25),     R26,      \
-            L31,     L32,     L33,     L34,     L35,     L36,           R31,     R32,     R33,     R34,             R35,     R36      \
-    )
+    ) WRAPPER_moonlander_top( \
+          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,  KC_F13,  KC_F16,  KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12, \
+            L11,     L12,     L13,     L14,     L15,     L16, DM_REC1, DM_PLY1,    R11,     R12,     R13,     R14,     R15,     R16,      \
+            L21,     L22,     L23,     L24,     L25,     L26, DM_RSTP, KC_BSPC,    R21,     R22,     R23,     R24,     R25,     R26,      \
+            L31,     L32,     L33,     L34,     L35,     L36,                      R31,     R32,     R33,     R34,     R35,     R36,      \
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,  ALFRED,                  VIM_SAV, KC_MEDB, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL  )
 
 #   define LAYOUT_moonlander_top(...)     WRAPPER_moonlander_top(__VA_ARGS__)
 #   define LAYOUT_moonlander_basic(...)   WRAPPER_moonlander(__VA_ARGS__)
