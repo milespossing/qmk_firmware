@@ -49,7 +49,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT_moonlander_common(
         ______________________RGB_CTRL______________________,  _______________________EMPTY________________________,\
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG_GAME,  XXXXXXX, AG_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
-        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, DF_COLE, DF_QWER, XXXXXXX, XXXXXXX, QK_BOOT \
+        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, DF_COLE, DF_QWER, DF_PLOV, XXXXXXX, QK_BOOT \
+    ),
+    [_PLOVER] = LAYOUT_moonlander_basic(
+        _______________________EMPTY________________________, XXXXXXX,           XXXXXXX, _______________________EMPTY________________________,
+        _______________________EMPTY________________________, XXXXXXX,           XXXXXXX, _______________________EMPTY________________________,
+                                      XXXXXXX, __PLOVER_L1__, XXXXXXX,           XXXXXXX, __PLOVER_R1__,
+                                      XXXXXXX, __PLOVER_L2__,                             __PLOVER_R2__,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,           TO(_QWERTY),      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                            XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX
     ),
     [_GAME] = LAYOUT_moonlander_basic(
                                             __NUM_ROW_LEFT__, XXXXXXX,             XXXXXXX, __NUM_ROW_RGHT__,
@@ -59,6 +67,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,           KC_ENT,         TO(_QWERTY),          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                              KC_SPC, XXXXXXX, XXXXXXX,             XXXXXXX, MO_RAZE, XXXXXXX
     ),
-
     [_MEDIA] = LAYOUT_moonlander_common(__MEDIA_ALL__)
 };

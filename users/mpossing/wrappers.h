@@ -1,5 +1,6 @@
 #pragma once
 #include QMK_KEYBOARD_H
+#include "keymap_steno.h"
 
 #define ALFRED G(KC_SPC)
 
@@ -28,8 +29,15 @@
 #define __COLEMAK_R2__ KC_H, KC_N, KC_E, KC_I, KC_O
 #define __COLEMAK_R3__ KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
+#define __PLOVER_L1__ STN_S1, STN_TL, STN_PL, STN_HL, STN_ST1
+#define __PLOVER_L2__ STN_S2, STN_KL, STN_WL, STN_RL, STN_ST2
+
+#define __PLOVER_R1__ STN_ST3, STN_FR, STN_PR, STN_LR, STN_TR, STN_DR
+#define __PLOVER_R2__ STN_ST4, STN_RR, STN_BR, STN_GR, STN_SR, STN_ZR
+
 #define DF_QWER DF(_QWERTY)
 #define DF_COLE DF(_COLEMAK)
+#define DF_PLOV DF(_PLOVER)
 
 // Utils
 #define __EMPTY__ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
