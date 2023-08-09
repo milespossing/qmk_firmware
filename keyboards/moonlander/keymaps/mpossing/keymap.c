@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_ADJUST] = LAYOUT_moonlander_common(
         ______________________RGB_CTRL______________________,  _______________________EMPTY________________________,\
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG_GAME,  XXXXXXX, AG_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG_GAME,  AG_TOGG,  KC_NUM, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
         KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, DF_COLE, DF_QWER, DF_PLOV, XXXXXXX, QK_BOOT \
     ),
     [_PLOVER] = LAYOUT_moonlander_basic(
