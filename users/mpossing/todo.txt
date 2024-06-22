@@ -1,0 +1,4 @@
+(A) Add a num pad function
+(C) Add some layer colors?
+(B) Remove lower once and for all
+(C) Add some slush keys for app switching
