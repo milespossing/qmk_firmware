@@ -220,14 +220,18 @@ This bootloader is primarily for keyboards originally designed for the PS2AVRGB 
 
 USBaspLoader is a bootloader based on V-USB that emulates a hardware USBasp device. It runs on ATmega32A and ATmega328P MCUs.
 
-Precompiled `.hex` files are generally not available, but you can compile it yourself by setting up the QMK environment and following Coseyfannitutti's guide for the appropriate MCU:
+Precompiled `.hex` files are generally not available, but you can compile it yourself by setting up the QMK environment and cloning the appropriate branch of Coseyfannitutti's USBaspLoader fork:
 
-|MCU                                                                                  |Low   |High  |Extended|USB ID     |
-|-------------------------------------------------------------------------------------|------|------|--------|-----------|
-|[ATmega32A](https://github.com/coseyfannitutti/discipline/tree/master/doc/bootloader)|`0x1F`|`0xC0`|*n/a*   |`16C0:05DC`|
-|[ATmega328P](https://github.com/coseyfannitutti/discipad/tree/master/doc/bootloader) |`0xD7`|`0xD0`|`0x04`  |`16C0:05DC`|
+|MCU                                                                          |Low   |High  |Extended|USB ID     |
+|-----------------------------------------------------------------------------|------|------|--------|-----------|
+|[ATmega32A](https://github.com/coseyfannitutti/USBaspLoader/tree/atmega32a)  |`0x1F`|`0xC0`|*n/a*   |`16C0:05DC`|
+|[ATmega328P](https://github.com/coseyfannitutti/USBaspLoader/tree/atmega328p)|`0xD7`|`0xD0`|`0x04`  |`16C0:05DC`|
 
-Note that some boards may have their own specialized build of this bootloader in a separate repository. This will usually be linked to in the board's readme.
+From there, simply `cd` to the `firmware/` directory and run `make`, which should produce a file called `main.hex`.
+
+:::tip
+Some boards may have their own specialized build of this bootloader in a separate repository. This will usually be linked to in the board's readme.
+:::
 
 ## Flashing the Bootloader
 
@@ -286,7 +290,7 @@ avrdude done.  Thank you.
 This is a slightly more advanced topic, but may be necessary if you are switching from one bootloader to another (for example, Caterina to Atmel/QMK DFU on a Pro Micro). Fuses control some of the low-level functionality of the AVR microcontroller, such as clock speed, whether JTAG is enabled, and the size of the section of flash memory reserved for the bootloader, among other things. You can find a fuse calculator for many AVR parts [here](https://www.engbedded.com/conffuse/).
 
 ::: warning
-**WARNING:** Setting incorrect fuse values, in particular the clock-related bits, may render the MCU practically unrecoverable without high voltage programming (not covered here)! Make sure to double check the commands you enter before you execute them.
+Setting incorrect fuse values, in particular the clock-related bits, may render the MCU practically unrecoverable without high voltage programming (not covered here)! Make sure to double check the commands you enter before you execute them.
 :::
 
 To set the fuses, add the following to the `avrdude` command:
