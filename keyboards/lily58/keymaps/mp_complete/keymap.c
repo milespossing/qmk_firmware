@@ -1,0 +1,14 @@
+#include QMK_KEYBOARD_H
+#include "mp_complete.h"
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+
+ [_COLEMAK] = LAYOUT_COLEMAK,
+ [_QWERTY] = LAYOUT_QWERTY,
+ [_LOWER] = LAYOUT_LOWER,
+ [_RAISE] = LAYOUT_RAISE,
+ [_ADJUST] = LAYOUT_ADJUST
+};
+
+
