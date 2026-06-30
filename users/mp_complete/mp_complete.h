@@ -115,8 +115,8 @@ SFT_T(KC_F7),   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,       XXXXXXX, KC_MIN
 
 #define LAYOUT_LOWER LAYOUT_6x3(\
       KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,          KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,\
-     KC_LCTL, XXXXXXX, KC_MPRV, XXXXXXX, KC_MPLY, KC_MNXT,       XXXXXXX,    KC_4,    KC_5,    KC_6,KC_RIGHT, XXXXXXX,\
-     KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          KC_0,    KC_1,    KC_2,    KC_3, XXXXXXX, XXXXXXX)
+     XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_MPLY,       XXXXXXX,    KC_4,    KC_5,    KC_6,KC_RIGHT, XXXXXXX,\
+     KC_LSFT, KC_MPRV, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX,          KC_0,    KC_1,    KC_2,    KC_3, XXXXXXX, XXXXXXX)
 
 #define LAYOUT_ADJUST LAYOUT_ADJUST_6x3(_______, _______, _______, _______, _______, _______, \
                                           KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______, _______, \
